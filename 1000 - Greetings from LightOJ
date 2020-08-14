@@ -1,0 +1,27 @@
+/**
+1000 - Greetings from LightOJ
+Code is written by Zahid Sarder
+Email:: sourovsarder3@gmail.com
+**/
+
+#include<bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.setf(ios::fixed,ios::floatfield);
+ 
+    int c=0, t, a, b;
+    cin>>t;
+ 
+    while(c<t)
+    {
+        cin>>a>>b;
+        cout<<"Case "<<c+1<<": "<<a+b<<endl;
+        c++;
+    }
+ 
+    return 0;
+}

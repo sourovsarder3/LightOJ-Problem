@@ -1,0 +1,43 @@
+/**
+1008 - Fibsieve`s Fantabulous Birthday (Accepted)
+Code is written by Zahid Sarder
+Email:: sourovsarder3@gmail.com
+**/
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.setf(ios::fixed,ios::floatfield);
+
+    long long int t, n, j=0;
+
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        long long int sq = ceil(sqrt(n));
+        long long int r = sq*sq - n;
+        long long int x, y;
+
+        if(r<sq)
+        {
+            y = r + 1;
+            x = sq;
+        }else
+        {
+            x = 2*sq-r-1;
+            y = sq;
+        }
+
+        if(sq & 1)
+            swap(x,y);
+
+        cout<<"Case "<<++j<<": "<<x<<" "<<y<<endl;
+    }
+
+    return 0;
+}

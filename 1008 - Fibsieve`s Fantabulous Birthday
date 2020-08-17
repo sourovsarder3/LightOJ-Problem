@@ -1,0 +1,95 @@
+/**
+1008 - Fibsieve`s Fantabulous Birthday
+This code give Time Limit Exceeded erorr when you submit this code on Light OJ
+Code is written by Zahid Sarder
+Email:: sourovsarder3@gmail.com
+**/
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.setf(ios::fixed,ios::floatfield);
+
+    int i, j, k, coun, x, y, n, br, t, case_no=1;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        coun=0;
+        br=0;
+        for(k=1; ; k++)
+        {
+
+            if(k%2==0)
+            {
+                j = k;
+                for(i=1; i<=k; i++)
+                {
+                    coun++;
+                    if(coun==n)
+                    {
+                        x = i;
+                        y = j;
+                        br = 101;
+                    }
+
+                    if(i==j)
+                    {
+                        j--;
+                        for( ;j>=1; j--)
+                        {
+                            coun++;
+                            if(coun==n)
+                            {
+                                x = i;
+                                y = j;
+                                br = 101;
+                            }
+                        }
+                    }
+                }
+            } else
+            {
+                j = k;
+                for(i=1; i<=k; i++)
+                {
+                    coun++;
+                    if(coun==n)
+                    {
+                        x = j;
+                        y = i;
+                        br = 101;
+                    }
+                    if(i==j)
+                    {
+                        j--;
+                        for( ;j>=1; j--)
+                        {
+                            coun++;
+                            if(coun==n)
+                            {
+                                x = j;
+                                y = i;
+                                br = 101;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if(br==101)
+                break;
+
+        }
+
+        cout<<"Case "<<case_no<<": "<<x<<" "<<y<<endl;
+        case_no++;
+    }
+
+
+    return 0;
+}

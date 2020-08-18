@@ -1,0 +1,28 @@
+/**
+1022 - Circle in Square
+Code is written by Zahid Sarder
+Email:: sourovsarder3@gmail.com
+**/
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.setf(ios::fixed,ios::floatfield);
+
+    double pi=3.1415926, r;
+    int t, j=0;
+
+    cin>>t;
+    while(t--)
+    {
+        cin>>r;
+
+        cout<<fixed<<setprecision(2)<<"Case "<<++j<<": "<<(r*r*4)-(2 * acos(0.0)*r*r)<<endl;
+    }
+
+    return 0;
+}
